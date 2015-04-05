@@ -1,0 +1,107 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ServiceDisposeDialog.aspx.cs" Inherits="UI.CustomerService.ServiceDisposeDialog" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link href="../CSS/style2.css" rel="stylesheet" type="text/css" />
+    <script src="../JS/jquery-1.4.1-vsdoc.js"></script>
+    <script src="../JS/json.js"></script>
+    <script src="../JS/MyJs.js"></script>
+    <script>
+        $(function () {
+            var pdata = window.dialogArguments;
+            
+            if (pdata != null) {
+                $("#CusID").text(pdata["CusID"]);
+                $("#CSTitle").text(pdata["CSTitle"]);
+                $("#STName").text(pdata["STName"]);
+                $("#UserName").text(pdata["UserName"]);
+                $("#CSCreateDate").text(pdata["CSCreateDate"]);
+                $("#CSDesc").text(pdata["CSDesc"]);
+            }
+            $("input[value=确定]").click(function () {
+                var CSDeal = $("#CSDeal").text();
+                if (CSDeal=="请输入处理内容") {
+                    alert("处理结果不能为空！");
+                    $("#CSDeal").focus();
+                    return;
+                }
+                var cs = JSON.stringify({ "CSID": pdata["CSID"], "CSDeal": CSDeal });
+                myAjax("/Service/CTSerServices.asmx/UpdateCSDeal", JSON.stringify({ "json": cs }), function (data) {
+                    if (data["d"] > 0) {
+                        alert("处理成功");
+                        window.returnValue = { "state": 1 };
+                        window.close();
+                    } else {
+                        alert("未知错误，处理失败！");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+<table class="tableEdit" style="width:500px;">
+        <thead>
+            <tr>
+                <td colspan="4">服务信息</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>客户编号：</th>
+            <td>
+                <span id="CusID"></span>
+            </td>
+            <th>服务类型：</th>
+            <td>
+                <span id="STName"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>创建时候：</th>
+            <td>
+                <span id="CSCreateDate"></span>
+               </td>
+            <th>创建人：</th>
+            <td>
+                <span id="UserName"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>服务概要：</th>
+            <td colspan="3">
+                <span id="CSTitle"></span>
+             </td>
+        </tr>
+        <tr>
+            <th>详细信息：</th>
+            <td colspan="3">
+                <span id="CSDesc"></span>
+             </td>
+        </tr>
+    </table>
+ <table class="tableEdit" style="width:500px;">
+        <thead>
+            <tr>
+                <td colspan="4">服务处理</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>服务处理：</th>
+            <td colspan="3">
+                <textarea id="CSDeal" placeholder="请输入处理内容"></textarea>
+             </td>
+        </tr>
+         <tfoot>
+            <tr>
+                <td colspan="4">
+                     <input type="button" value="确定" />&nbsp;&nbsp;
+                     <input type="button" value="关闭" onclick="window.close()" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

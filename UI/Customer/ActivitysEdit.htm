@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link href="../CSS/style2.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../DatePicker/WdatePicker.js"></script>
+    <script src="../JS/jquery-1.4.1-vsdoc.js"></script>
+    <script src="../JS/json.js"></script>
+    <script src="../JS/MyJs.js"></script>
+    <script>
+        $(function () {
+            var pdata = window.dialogArguments;
+            var CusID = pdata["CusID"];
+            var ActID=null;
+            if (pdata["ActID"]) {
+                ActID = pdata["ActID"];
+                $("#ActDate").val(ConvertToDT(pdata["ActDate"]));
+                $("#ActAdd").val(pdata["ActAdd"]);
+                $("#ActTitle").val(pdata["ActTitle"]);
+                $("#ActMemo").val(pdata["ActMemo"]);
+                $("#ActDesc").val(pdata["ActDesc"]);
+            }
+            $("input[value=确定]").click(function () {
+                var act = {
+                    "ActID": ActID,
+                    "CusID": CusID,
+                    "ActDate": $("#ActDate").val(),
+                    "ActAdd": $("#ActAdd").val(),
+                    "ActTitle": $("#ActTitle").val(),
+                    "ActMemo": $("#ActMemo").val(),
+                    "ActDesc": $("#ActDesc").val()
+                };
+                myAjax("/Service/CusServices.asmx/UpAddAct", JSON.stringify({ "json": JSON.stringify(act) }), function (data) {
+                    if (data["d"] > 0) {
+                        act["ActID"] = data["d"];
+                        window.returnValue = act;
+                        window.close();
+                    } else {
+                        alert("操作失败！");
+                    }
+                });
+            });
+            
+          
+        });
+    </script>
+</head>
+<body>
+<table class="tableEdit">
+        <thead>
+            <tr>
+                <td colspan="4">编辑客户来往记录</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>交往时间：</th>
+            <td>
+                <input type="text" onclick="WdatePicker()" id="ActDate" /></td>
+            <th>交往地点：</th>
+            <td>
+                <input type="text" id="ActAdd" />
+            </td>
+        </tr>
+        <tr>
+            <th>概要：</th>
+            <td><input type="text" id="ActTitle" /></td>
+            <th>备注：</th>
+            <td><input type="text" id="ActMemo" /></td>
+        </tr>
+        <tr>
+            <th>详细描述：</th>
+            <td colspan="3"><textarea id="ActDesc"></textarea></td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                    <input type="button" value="确定" />&nbsp;&nbsp;
+                    <input type="button" value="关闭" onclick="window.close()" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

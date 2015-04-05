@@ -1,0 +1,166 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ServiceResultDialog.aspx.cs" Inherits="UI.CustomerService.ServiceResultDialog" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title></title>
+    <link href="../CSS/style2.css" rel="stylesheet" type="text/css" />
+    <script src="../JS/jquery-1.4.1-vsdoc.js"></script>
+    <script src="../JS/json.js"></script>
+    <script src="../JS/MyJs.js"></script>
+    <script>
+        var index=0;
+        $(function () {
+            var pdata = window.dialogArguments;
+            if (pdata != null) {
+                $("#CusID").text(pdata["CusID"]);
+                $("#CSTitle").text(pdata["CSTitle"]);
+                $("#CSDesc").text(pdata["CSDesc"]);
+                $("#CSCreateDate").text(pdata["CSCreateDate"]);
+                $("#CSDealDate").text(pdata["CSDealDate"]);
+                $("#CSDeal").text(pdata["CSDeal"]);
+                $("#UserName").text(pdata["UserName"]);
+                $("#UserName2").text(pdata["UserName2"]);
+                $("#STName").text(pdata["STName"]);
+            }
+            $("input[value=确定]").live("click", function () {
+                var CSID = pdata["CSID"];
+                var CSResult = $("#CSResult").val();
+                if (index==0) {
+                    alert("请选择服务满意度！");
+                    return;
+                }
+                var csjs = JSON.stringify({
+                    "CSID": CSID,
+                    "CSResult": CSResult,
+                    "CSSatisfy": index
+                });
+                myAjax("/Service/CTSerServices.asmx/UpdateCSRes", JSON.stringify({ "json": csjs }), function (data) {
+                    if (data["d"]>0) {
+                        alert("操作成功！");
+                        window.returnValue = { "state": 4 };
+                        window.close();
+                    } else {
+                        alert("操作失败！");
+                    }
+                });
+            });
+            //五角星鼠标悬浮事件
+            $(".xing").mousemove(function () {
+                 index= $(this).attr("index");
+                 for (var i = 0; i < index; i++) {
+                     $(".xing")[i].innerText = "★";
+                 }
+            }).mouseout(function () {
+                if (index  == 5) {
+                    return;
+                }
+                for (var i = index ; i <5; i++) {
+                    $(".xing")[i].innerText = "☆";
+                }
+            });
+           
+        });
+
+      
+    </script>
+    <style>
+        .xing {
+            color:red;
+            font-size:15px;
+            float:left;
+        }
+       
+    </style>
+</head>
+<body>
+<table class="tableEdit" style="width:500px;">
+        <thead>
+            <tr>
+                <td colspan="4">服务信息</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>客户编号：</th>
+            <td>
+                <span id="CusID"></span></td>
+            <th>服务类型：</th>
+            <td>
+                <span id="STName"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>创建时候：</th>
+            <td><span id="CSCreateDate"></span>
+               </td>
+            <th>创建人：</th>
+            <td>
+                <span id="UserName"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>服务概要：</th>
+            <td colspan="3">
+                <span id="CSTitle"></span>
+             </td>
+        </tr>
+        <tr>
+            <th>详细信息：</th>
+            <td colspan="3">
+                <span id="CSDesc"></span>
+             </td>
+        </tr>
+    </table>
+ <table class="tableEdit" style="width:500px;">
+        <thead>
+            <tr>
+                <td colspan="4">服务处理</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>处理时间：</th>
+            <td>
+                <span id="CSDealDate"></span></td>
+            <th>处理人：</th>
+            <td>
+                <span id="UserName2"></span>
+            </td>
+        </tr>
+        <tr>
+            <th>服务处理：</th>
+            <td colspan="3">
+                <span id="CSDeal"></span>
+             </td>
+        </tr>
+    </table>
+    <table class="tableEdit" style="width:500px;">
+        <thead>
+            <tr>
+                <td colspan="4">服务反馈</td>
+            </tr>
+        </thead>
+        <tr>
+            <th>处理结果：</th>
+            <td>
+                <input type="text" id="CSResult"  placeholder="鼠标滑过选择满意度"/>
+             </td>
+            <th>满意度：</th>
+            <td >
+                <div class="xing" index="1">☆</div>
+                <div class="xing" index="2">☆</div>
+                <div class="xing" index="3">☆</div>
+                <div class="xing" index="4">☆</div>
+                <div class="xing" index="5">☆</div>
+            </td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="4">
+                     <input type="button" value="确定" />&nbsp;&nbsp;
+                     <input type="button" value="关闭" onclick="window.close()" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

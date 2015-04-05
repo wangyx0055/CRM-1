@@ -1,0 +1,1265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+您 Web 项目的发布/打包进程将使用此文件。您可以通过编辑此 MSBuild 文件
+来自定义该进程的行为。若要了解与此相关的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkID=208121。
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>F:\CRM</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/DAL.dll">
+      <publishTime>03/13/2015 11:22:13</publishTime>
+    </File>
+    <File Include="bin/Model.dll">
+      <publishTime>03/13/2015 11:22:12</publishTime>
+    </File>
+    <File Include="bin/UI.dll">
+      <publishTime>03/13/2015 11:32:14</publishTime>
+    </File>
+    <File Include="CSS/left.css">
+      <publishTime>12/03/2014 23:53:50</publishTime>
+    </File>
+    <File Include="CSS/Style1.css">
+      <publishTime>12/03/2014 23:52:56</publishTime>
+    </File>
+    <File Include="CSS/style2.css">
+      <publishTime>12/03/2014 23:28:03</publishTime>
+    </File>
+    <File Include="CSS/style3.css">
+      <publishTime>12/03/2014 23:52:39</publishTime>
+    </File>
+    <File Include="CSS/Style4.css">
+      <publishTime>12/03/2014 23:52:32</publishTime>
+    </File>
+    <File Include="CSS/style5.css">
+      <publishTime>12/03/2014 23:53:00</publishTime>
+    </File>
+    <File Include="Customer/ActivitysEdit.aspx">
+      <publishTime>12/05/2014 23:40:03</publishTime>
+    </File>
+    <File Include="Customer/CustomerEdit.aspx">
+      <publishTime>12/05/2014 23:17:27</publishTime>
+    </File>
+    <File Include="Customer/CustomerPage.aspx">
+      <publishTime>12/05/2014 23:41:20</publishTime>
+    </File>
+    <File Include="Customer/LinkManEdit.aspx">
+      <publishTime>12/05/2014 23:36:02</publishTime>
+    </File>
+    <File Include="Customer/LostEnter.aspx">
+      <publishTime>11/26/2014 11:24:20</publishTime>
+    </File>
+    <File Include="Customer/LostsPage.aspx">
+      <publishTime>12/05/2014 23:56:44</publishTime>
+    </File>
+    <File Include="Customer/WebForm1.aspx">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceAllot.aspx">
+      <publishTime>12/04/2014 11:52:52</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceCreate.aspx">
+      <publishTime>12/08/2014 00:42:25</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceDetail.aspx">
+      <publishTime>12/06/2014 00:00:30</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceDetailDialog.aspx">
+      <publishTime>11/22/2014 11:55:12</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceDispose.aspx">
+      <publishTime>12/04/2014 11:55:02</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceDisposeDialog.aspx">
+      <publishTime>11/22/2014 11:56:07</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceResult.aspx">
+      <publishTime>12/04/2014 12:00:33</publishTime>
+    </File>
+    <File Include="CustomerService/ServiceResultDialog.aspx">
+      <publishTime>11/22/2014 12:12:46</publishTime>
+    </File>
+    <File Include="DatePicker/calendar.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/config.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/lang/en.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/lang/zh-cn.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/lang/zh-tw.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/My97DatePicker.htm">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/datePicker.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/default/datepicker.css">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/default/img.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/WdatePicker.css">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/whyGreen/bg.jpg">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/whyGreen/datepicker.css">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/skin/whyGreen/img.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="DatePicker/WdatePicker.js">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="default.aspx">
+      <publishTime>12/01/2014 23:37:29</publishTime>
+    </File>
+    <File Include="Error/404.aspx">
+      <publishTime>11/26/2014 21:53:47</publishTime>
+    </File>
+    <File Include="Error/500.aspx">
+      <publishTime>11/26/2014 21:54:03</publishTime>
+    </File>
+    <File Include="Exce/ExceCusLosPage.aspx">
+      <publishTime>12/06/2014 09:03:11</publishTime>
+    </File>
+    <File Include="Exce/ExceServerTypePage.aspx">
+      <publishTime>12/01/2014 15:43:44</publishTime>
+    </File>
+    <File Include="foot.aspx">
+      <publishTime>11/22/2014 11:33:54</publishTime>
+    </File>
+    <File Include="head.aspx">
+      <publishTime>12/03/2014 15:12:49</publishTime>
+    </File>
+    <File Include="Images/11.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="Images/22.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="Images/33.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="Images/back.gif">
+      <publishTime>10/31/2014 10:54:06</publishTime>
+    </File>
+    <File Include="Images/bg.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_acti.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_confirm.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_deal.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_del.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_detail.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_edit.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_feedback.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_linkman.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_orders.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_plan.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_relay.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/bt_yes.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/del.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/dl.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/edt.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/first.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/go.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/last.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/left.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/login_03.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/login_05.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/login_06.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/login_07.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/login_08.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_03.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_04.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_05.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_07.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_09.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_11.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_20.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_21.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_29.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_30.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_31.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_32.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_34.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_36.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_37.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_39.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_40.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_41.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_45.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_47.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_48.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_51.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_52.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_55.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_55_1.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_58.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_59.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_61.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/main_62.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/next.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/SC04C10.jpg">
+      <publishTime>04/12/2010 03:16:28</publishTime>
+    </File>
+    <File Include="Images/tab_03.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_05.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_07.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_12.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_15.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_17.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_18.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_19.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tab_20.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="Images/tb.gif">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="JS/easyloader.js">
+      <publishTime>11/18/2014 09:25:59</publishTime>
+    </File>
+    <File Include="JS/jquery.easyui.min.js">
+      <publishTime>11/18/2014 09:25:59</publishTime>
+    </File>
+    <File Include="JS/json.js">
+      <publishTime>10/31/2014 10:54:07</publishTime>
+    </File>
+    <File Include="JS/MyJs.js">
+      <publishTime>11/27/2014 15:03:58</publishTime>
+    </File>
+    <File Include="left.aspx">
+      <publishTime>12/03/2014 23:48:01</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-af.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-bg.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-ca.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-cs.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-cz.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-da.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-de.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-en.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-es.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-fr.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-nl.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-pt_BR.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-ru.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-tr.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-zh_CN.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="locale/easyui-lang-zh_TW.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="login.aspx">
+      <publishTime>12/01/2014 23:36:21</publishTime>
+    </File>
+    <File Include="Main.aspx">
+      <publishTime>12/11/2014 14:17:13</publishTime>
+    </File>
+    <File Include="Manager/RolePage.aspx">
+      <publishTime>01/20/2015 00:09:03</publishTime>
+    </File>
+    <File Include="Manager/UserPage.aspx">
+      <publishTime>12/04/2014 11:46:09</publishTime>
+    </File>
+    <File Include="Manager/UserRolePageDialog.aspx">
+      <publishTime>12/05/2014 23:47:32</publishTime>
+    </File>
+    <File Include="NoRole.aspx">
+      <publishTime>11/26/2014 21:48:22</publishTime>
+    </File>
+    <File Include="plugins/jquery.accordion.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.calendar.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.combo.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.combobox.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.combogrid.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.combotree.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.datagrid.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.datebox.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.datetimebox.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.dialog.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.draggable.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.droppable.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.form.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.layout.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.linkbutton.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.menu.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.menubutton.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.messager.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.numberbox.js">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="plugins/jquery.numberspinner.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.pagination.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.panel.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.parser.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.progressbar.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.propertygrid.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.resizable.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.searchbox.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.slider.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.spinner.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.splitbutton.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.tabs.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.timespinner.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.tree.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.treegrid.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.validatebox.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="plugins/jquery.window.js">
+      <publishTime>11/18/2014 09:25:47</publishTime>
+    </File>
+    <File Include="PublicPage/SelectCustomerEdit.aspx">
+      <publishTime>11/27/2014 08:59:19</publishTime>
+    </File>
+    <File Include="PublicPage/SelectEmpEdit.aspx">
+      <publishTime>12/04/2014 14:08:18</publishTime>
+    </File>
+    <File Include="rigth.aspx">
+      <publishTime>11/22/2014 11:48:28</publishTime>
+    </File>
+    <File Include="Sale/EditSale.aspx">
+      <publishTime>12/05/2014 22:55:03</publishTime>
+    </File>
+    <File Include="Sale/SaleAllot.aspx">
+      <publishTime>12/04/2014 11:47:20</publishTime>
+    </File>
+    <File Include="Sale/SaleChance.aspx">
+      <publishTime>12/04/2014 14:55:45</publishTime>
+    </File>
+    <File Include="Sale/saleManager.aspx">
+      <publishTime>12/22/2014 16:17:00</publishTime>
+    </File>
+    <File Include="Sale/SaleNoEdit.aspx">
+      <publishTime>11/26/2014 10:18:48</publishTime>
+    </File>
+    <File Include="Sale/SaleOkEdit.aspx">
+      <publishTime>11/26/2014 10:18:50</publishTime>
+    </File>
+    <File Include="Sale/SaleOpenEdit.aspx">
+      <publishTime>12/04/2014 01:42:34</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-1.8.2.min.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui-1.8.24.min.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/json.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.6.2.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/DetailsView.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Focus.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/GridView.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Menu.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MenuStandards.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjax.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/SmartNav.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/TreeView.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebForms.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebParts.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebUIValidation.js">
+      <publishTime>11/01/2014 15:27:37</publishTime>
+    </File>
+    <File Include="Service/ChanServices.asmx">
+      <publishTime>10/31/2014 12:02:08</publishTime>
+    </File>
+    <File Include="Service/CTSerServices.asmx">
+      <publishTime>11/12/2014 11:33:20</publishTime>
+    </File>
+    <File Include="Service/CusServices.asmx">
+      <publishTime>11/07/2014 16:59:25</publishTime>
+    </File>
+    <File Include="Service/LoginCheck.ashx">
+      <publishTime>11/05/2014 18:13:22</publishTime>
+    </File>
+    <File Include="Service/MyProcessRequst.ashx">
+      <publishTime>11/18/2014 09:31:33</publishTime>
+    </File>
+    <File Include="Service/RoleServices.asmx">
+      <publishTime>11/15/2014 15:29:01</publishTime>
+    </File>
+    <File Include="Service/UsersServices.asmx">
+      <publishTime>10/31/2014 10:56:18</publishTime>
+    </File>
+    <File Include="size.aspx">
+      <publishTime>12/31/2014 20:13:54</publishTime>
+    </File>
+    <File Include="themes/default/accordion.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/calendar.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/combo.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/combobox.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/datagrid.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/datebox.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/dialog.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/easyui.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/accordion_collapse.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/accordion_expand.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/blank.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/button_a_bg.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/button_plain_hover.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/button_span_bg.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/calendar_nextmonth.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/calendar_nextyear.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/calendar_prevmonth.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/calendar_prevyear.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/combo_arrow.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_header_bg.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_row_collapse.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_row_expand.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_sort_asc.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_sort_desc.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datagrid_title_bg.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/datebox_arrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/layout_arrows.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/menu.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/menu_downarrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/menu_rightarrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/menu_sep.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/menu_split_downarrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/messager_error.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/messager_info.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/messager_question.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/messager_warning.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_first.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_last.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_load.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_loading.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_next.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/pagination_prev.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/panel_loading.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/panel_title.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/panel_tools.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/panel_tool_collapse.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/panel_tool_expand.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/searchbox_button.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/slider_handle.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/spinner_arrow_down.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/spinner_arrow_up.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tabs_active.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tabs_close.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tabs_enabled.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tabs_leftarrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tabs_rightarrow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_arrows.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_checkbox_0.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_checkbox_1.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_checkbox_2.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_dnd_no.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_dnd_yes.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_elbow.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_file.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_folder.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_folder_open.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/tree_loading.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/validatebox_pointer.gif">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/images/validatebox_warning.png">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/layout.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/linkbutton.css">
+      <publishTime>11/18/2014 09:25:45</publishTime>
+    </File>
+    <File Include="themes/default/menu.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/menubutton.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/messager.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/pagination.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/panel.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/progressbar.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/propertygrid.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/searchbox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/slider.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/spinner.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/splitbutton.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/tabs.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/tree.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/validatebox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/default/window.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/accordion.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/calendar.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/combo.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/combobox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/datagrid.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/datebox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/dialog.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/easyui.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/accordion_collapse.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/accordion_expand.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/blank.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/button_a_bg.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/button_plain_hover.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/button_span_bg.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/calendar_nextmonth.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/calendar_nextyear.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/calendar_prevmonth.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/calendar_prevyear.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/combo_arrow.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_header_bg.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_row_collapse.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_row_expand.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_sort_asc.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_sort_desc.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datagrid_title_bg.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/datebox_arrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/layout_arrows.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/menu.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/menu_downarrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/menu_rightarrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/menu_sep.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/menu_split_downarrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/messager_error.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/messager_info.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/messager_question.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/messager_warning.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_first.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_last.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_load.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_loading.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_next.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/pagination_prev.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/panel_loading.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/panel_title.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/panel_tools.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/panel_tool_collapse.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/panel_tool_expand.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/searchbox_button.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/slider_handle.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/spinner_arrow_down.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/spinner_arrow_up.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tabs_close.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tabs_enabled.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tabs_leftarrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tabs_rightarrow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_arrows.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_checkbox_0.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_checkbox_1.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_checkbox_2.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_dnd_no.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_dnd_yes.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_elbow.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_file.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_folder.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_folder_open.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/tree_loading.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/validatebox_pointer.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/images/validatebox_warning.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/layout.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/linkbutton.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/menu.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/menubutton.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/messager.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/pagination.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/panel.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/progressbar.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/propertygrid.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/searchbox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/slider.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/spinner.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/splitbutton.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/tabs.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/tree.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/validatebox.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/gray/window.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icon.css">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/back.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/blank.gif">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/cancel.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/cut.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/edit_add.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/edit_remove.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/filesave.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/help.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/mini_add.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/mini_edit.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/mini_refresh.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/no.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/ok.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/pencil.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/print.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/redo.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/reload.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/search.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/sum.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/tip.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="themes/icons/undo.png">
+      <publishTime>11/18/2014 09:25:46</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>03/13/2015 11:22:14</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

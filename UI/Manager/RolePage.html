@@ -1,0 +1,255 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <link href="../themes/icon.css" rel="stylesheet" />
+    <link href="../themes/default/easyui.css" rel="stylesheet" />
+    <script src="../JS/jquery-1.4.1-vsdoc.js"></script>
+    <script src="../JS/jquery.easyui.min.js"></script>
+    <script src="../JS/json.js"></script>
+    <script src="../JS/MyJs.js"></script>
+    <script type="text/javascript">
+        var id = null;
+        var url = "../Service/MyProcessRequst.ashx";
+        $(function () {
+          
+
+            $("#div_right").dialog({
+                title: "角色编辑",
+                width: 300,
+                height: 400,
+                modal: true,
+                closed: true,
+                toolbar: [
+                    {
+                        text: "返回",
+                        iconCls: "icon-back",
+                        handler: function () {
+                            $("#div_right").dialog("close");
+                        }
+                    },
+                    {
+                        text: "保存",
+                        iconCls: "icon-save",
+                        handler: function () {
+                            var roleid = $("#roleid").val();
+                            $.post(url + "?method=DelRightRoleByID&role_id=" + roleid, null, function (data) { });//清除角色权限
+                            var roleright = "";
+                            $("#div_right input[type=checkbox]:checked").each(function (k,v) {
+                                roleright += v.value;
+                                roleright += ".";
+                            });
+                            $.post(url + "?method=AddRightRole&role_id=" + roleid + "&right=" + roleright, null, function (data) {
+                                if (data > 0) {
+                                    alert("操作成功！");
+                                    $("#div_right").dialog("close");
+                                }
+                            });//添加角色权限
+                        }
+                    }
+                ]
+            });
+            $.post("../Service/MyProcessRequst.ashx?method=GetRightAll", null, function (data) {
+                $(JSON.parse(data)).each(function (k, v) {
+                    var chx = $("<input type='checkbox' name='rights' value='" + v["Right_code"] + "' >");
+                    var str = $("<font>" + v["Right_tip"] + "&nbsp;&nbsp;</font>");
+                    var br = $("<br/>");
+                    $("#right").append(chx).append(str).append(br);
+                });
+            });
+        });
+      
+        $(function () {
+            $("#diva").dialog({
+                title: "角色编辑",
+                width: 300,
+                height: 250,
+                modal: true,
+                closed: true,
+                toolbar: [
+                     {
+                         text:"返回",
+                         iconCls: "icon-back",
+                         handler: function () {
+                             $("#diva").dialog("close");
+                         }
+                     },
+                    {
+                        text: "保存",
+                        iconCls: "icon-save",
+                        handler: function () {
+                            var flag = $("input[type=radio]:checked").val();
+                            var jsstr =JSON.stringify( {
+                                "Role_id": id,
+                                "Role_name": $("input[name=Role_name]").val(),
+                                "Role_desc": $("textarea[name=Role_desc]").text(),
+                                "Role_flag":flag
+                            });
+                            $.get(url + "?method=UpOrAddRole&json=" + encodeURI( jsstr),null, function (data) {
+                                if (data > 0) {
+                                    alert("操作成功！");
+                                    $("#diva").dialog("close");
+                                    GetData();
+                                } else {
+                                    alert("未知错误，操作失败！");
+                                }
+                            });
+                        }
+                    }
+                ]
+            });
+            GetData();
+        });
+
+        function GetData() {
+            $("#tbs").datagrid({
+                url: "../Service/MyProcessRequst.ashx",//请求路径
+                queryParams: {//参数
+                    method: "GetRoleAll"
+                },
+                loadMsg: "数据正在加载中，请稍等...",
+                striped: true,//是否显示斑马线
+                rownumbers: true,//是否显示行号
+                singleSelect:true,//只能选择一行
+                // pagination:true,//是否使用分页
+                columns: [[//显示数据绑定列
+                        { field: "Role_name", title: "角色名称", align: "center", width: 220 },
+                         { field: "Role_desc", title: "角色描述", align: "center", width: 530 },
+                          {
+                              field: "Role_flag", title: "是否可用", align: "center", width: 150, formatter: function (value, row, index) {
+                                  return value == 1 ? "可用" : "不可用";
+                              }
+                          },
+                           { field: "Role_name", title: "操作", align: "center", width: 200 }
+                ]],
+                toolbar: [
+                    {//添加
+                        text: "添加",
+                        iconCls: "icon-add",
+                        handler: function () {
+                            $("#f1").form("clear");//清除表单数据
+                            $("#diva").dialog("open");
+                            id = null;
+                        }
+                    },
+                     {//查看权限
+                         text: "查看权限",
+                         iconCls: "icon-search",
+                         handler: function () {
+                             var row = $("#tbs").datagrid("getSelected");
+                             role_id = row["Role_id"];
+                             if (row) {
+                                 $("#div_right").dialog("open");
+                                 $("#roleid").val( row["Role_id"]);
+                                 $.post("../Service/MyProcessRequst.ashx?method=GetRightRoleByID&role_id=" + role_id + "", null, function (data) {
+                                     $("#div_right input[type=checkbox]").attr("checked", false);
+                                     var rel = JSON.parse(data);
+                                     $(rel).each(function (k,v) {
+                                         $("#div_right input[type=checkbox][value=" + v["Rf_right_code"] + "]").attr("checked", true);
+                                     });
+                                 
+                                    
+                                    
+                                 });
+                             } else {
+                                 alert("请选择行！");
+                             }
+                         }
+                     },
+                    
+                       {//修改
+                           text: "修改",
+                           iconCls: "icon-edit",
+                           handler: function () {
+                               var row = $("#tbs").datagrid("getSelected");
+                               if (row) {
+                                   $("#diva").dialog("open");
+                                   id = row["Role_id"]
+                                   $("#f1").form("load", row);//将行对象里面的数据绑定到表单中
+                                   $("input[type=radio][value="+row["Role_flag"]+"]").attr("checked", true);
+                                   
+                               } else {
+                                   alert("请选择行！");
+                               }
+                           }
+                       },
+                {//删除
+                text: "删除",
+            iconCls: "icon-cancel",
+            handler: function () {
+                var row = $("#tbs").datagrid("getSelected");
+                if (row) {
+                    if (confirm("确认删除?")) {
+                        $.get("../Service/MyProcessRequst.ashx" + "?method=DelRole&id=" + row["Role_id"], null, function (data) {
+                            if (data > 0) {
+                                alert("操作成功！");
+                                GetData();
+                            } else {
+                                alert("操作失败！");
+                            }
+                        });
+                    }
+                } else {
+                    alert("请选择要删除的行！");
+                }
+                          
+            }
+              }
+                ]
+            });
+        }
+    </script>
+    <style>
+        .headDiv {
+            border: solid 1px #B5D6E6;
+            background-color: #C1EBFF;
+            padding: 5px;
+            font-size:12px;
+        }
+        .sp {
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+   <div>
+       <div class="headDiv">
+           <span class="sp">角色管理</span><br />
+           添加，修改，删除，禁用角色,管理角色的权限
+       </div>
+        <table class="dataTable" id="tbs">
+           
+        </table>
+       <div id="diva">
+           <form id="f1">
+               <table>
+                   <tr>
+                       <th >角色名称：</th>
+                       <th><input name="Role_name" type="text" placeholder="请输入角色名称" /></th>
+                   </tr>
+                   <tr>
+                       <th>角色描述：</th>
+                       <th>
+                           <textarea name="Role_desc" rows="6" cols="17"></textarea>
+                       </th>
+                   </tr>
+                   <tr>
+                       <th>是否启用：</th>
+                       <th><input name="Role_flag" type="radio" value="1" />启用&nbsp;<input name="Role_flag" type="radio" value="0" />禁用</th>
+                   </tr>
+               </table>
+           </form>
+       </div>
+       <div id="div_right">
+           <div id="right" style="padding:10px;">
+               <input id="roleid" type="hidden"  />
+           </div>
+       </div>
+    </div>
+</body>
+</html>

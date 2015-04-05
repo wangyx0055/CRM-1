@@ -1,0 +1,435 @@
+﻿ <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CustomerPage.aspx.cs" Inherits="UI.Customer.CustomerPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../CSS/style2.css" rel="stylesheet" type="text/css" />
+    <link href="../CSS/Style4.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        table tbody tr:hover {
+          color:blue;
+        }
+    </style>
+    <script src="../JS/jquery-1.4.1-vsdoc.js" type="text/javascript"></script>
+    <script src="../JS/json.js"></script>
+    <script src="../JS/MyJs.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $(".menuDiv div").click(function () {
+                $(".menuDiv div").css("background-image", "url()");
+                $(this).css("background-image", "url(../images/bg.gif)");
+                $(".contentDiv div").hide();
+                $(".contentDiv div:eq(" + $(this).index() + ")").show();
+            });
+        });
+    
+        $(function () {
+            $("#newa").hide();
+            $("#newact").hide();
+            //删除交往记录
+            $("#tbs2 tbody tr td img[title=删除..]").live("click", function () {
+                if (confirm("确认删除？")) {
+                    var id = $(this).attr("key");
+                    var tr = $(this).parent().parent();
+                    myAjax("/Service/CusServices.asmx/DelAct", JSON.stringify({ "id": id }), function (data) {
+                        if (data["d"] > 0) {
+                            $(tr).remove();
+                        }
+                    });
+                }
+            });
+            //删除联系人
+            $("#tbs1 tbody tr td img[title=删除.]").live("click", function () {
+                if (confirm("确认删除？")) {
+                    var id = $(this).attr("key");
+                    var tr = $(this).parent().parent();
+                    myAjax("/Service/CusServices.asmx/DelLinkMan", JSON.stringify({ "id": id }), function (data) {
+                        if (data["d"] > 0) {
+                            $(tr).remove();
+                        }
+                    });
+                }
+            });
+            //编辑联系人
+            $("#tbs1 tbody tr td img[title=编辑.]").live("click", function () {
+                var lkmid = $(this).attr("key");
+                var LMMemo = $(this).attr("desc");
+                var tr = $(this).parent().parent();
+                var jsstr = {
+                    "LMID": lkmid,//联系人编号
+                    "LMName": tr.children("td")[0].innerText,//联系人姓名
+                    "LMSex": tr.children("td")[1].innerText,//性别
+                    "LMDuty": tr.children("td")[2].innerText,//职位
+                    "LMMobileNo": tr.children("td")[4].innerText,//固定电话
+                    "LMOfficeNo": tr.children("td")[3].innerText,//移动电话
+                    "LMMemo": LMMemo//备注
+                };
+                var rt = window.showModalDialog("LinkManEdit.aspx?data=" + Math.random(), jsstr, "dialogWidth:700px;dialogHeight:300px;help:no");
+                if (rt != null) {
+                    if (rt["LMID"] > 0) {
+                        tr.children("td")[0].innerText = rt["LMName"];//联系人姓名
+                        tr.children("td")[1].innerText = rt["LMSex"];//性别
+                        tr.children("td")[2].innerText = rt["LMDuty"];//职位
+                        tr.children("td")[4].innerText = rt["LMMobileNo"];//固定电话
+                        tr.children("td")[3].innerText = rt["LMOfficeNo"];//移动电话
+                        $(this).attr("desc", rt["LMMemo"]);//备注
+                    }
+                }
+            });
+            //编辑交往记录
+            $("#tbs2 tbody tr td img[title=编辑..]").live("click", function () {
+                var imget = $(this);
+                var cusid = imget.attr("CusID");
+                var actid = imget.attr("key");
+                var ActMemo = imget.attr("ActMemo");
+                var tds = $(this).parent().parent().children("td");
+                var ActDate = tds[0].innerText;
+                var ActAdd = tds[1].innerText;
+                var ActTitle = tds[2].innerText;
+                var ActDesc = tds[3].innerText;
+                var act = { "CusID": cusid, "ActID": actid, "ActMemo": ActMemo, "ActDate": ActDate, "ActAdd": ActAdd, "ActTitle": ActTitle, "ActDesc": ActDesc };
+                var rt = window.showModalDialog("ActivitysEdit.aspx?data=" + Math.random(), act, "参数", "dialogWidth:600px;dialogHeight:300px;help:no");
+                if (rt!=null) {
+                       tds[0].innerText = rt["ActDate"];
+                       tds[1].innerText = rt["ActAdd"];
+                       tds[2].innerText = rt["ActTitle"];
+                       tds[3].innerText = rt["ActDesc"];
+                       imget.attr("ActMemo", rt["ActMemo"]);
+                }
+            });
+            //客户点击事件
+            $("#dataLeft .dataTable tr:gt(0)").live("click", function () {
+                $("#newa").show();
+                $("#newact").show();
+                var cusid = $(this).children("th")[0].innerText;
+                $("#newa").attr("key",cusid);
+                $("#newa").attr("key", cusid);//将这个客户的ID绑定到新建联系人中
+                $("#newact").attr("key", cusid);//将这个客户的ID绑定到新建交往记录中
+                $("#dataLeft .dataTable tr:gt(0)").css("background-color", "white");
+                $(this).css("background-color", "red");
+                $(".menuDiv div:first").css("background-image", "url(../images/bg.gif)");
+                $(".menuDiv div:last").css("background-image", "url()");
+                $(".contentDiv div:first").show();
+                $(".contentDiv div:last").hide();
+                //查询联系人
+                myAjax("/Service/CusServices.asmx/GetLinkManByCusID", JSON.stringify({ "cusid": cusid }), function (data) {
+                    $("#tbs1 tbody tr").remove();
+                    $(JSON.parse(data["d"])).each(function (k, v) {
+                        var tr = $("<tr></tr>");
+                        var td1 = $("<td>" + v["LMName"] + "</td>");
+                        var td2 = $("<td>" + v["LMSex"] + "</td>");
+                        var td3 = $("<td>" + v["LMDuty"] + "</td>");
+                        var td4 = $("<td>" + v["LMOfficeNo"] + "</td>");
+                        var td5 = $("<td>" + v["LMMobileNo"] + "</td>");
+                        var td6 = $("<td><img title='编辑.' src='../images/33.gif' key='" + v["LMID"] + "' desc='" + v["LMMemo"] + "' />&nbsp;&nbsp;<img title='删除.'  key='" + v["LMID"] + "' src='../images/11.gif' /></td>");
+                        tr.append(td1)
+                            .append(td2)
+                            .append(td3)
+                            .append(td4)
+                            .append(td5)
+                            .append(td6);
+                        $("#tbs1 tbody").append(tr);
+                    });
+                });
+                //查询交往记录
+                myAjax("/Service/CusServices.asmx/GetActByCusID", JSON.stringify({ "cusid": cusid }), function (data) {
+                    $("#tbs2 tbody tr").remove();
+                    $(JSON.parse(data["d"])).each(function (k, v) {
+                        var tr = $("<tr></tr>");
+                        var td1 = $("<td>" +ConvertTime( v["ActDate"]) + "</td>");
+                        var td2 = $("<td>" + v["ActAdd"] + "</td>");
+                        var td3 = $("<td>" + v["ActTitle"] + "</td>");
+                        var td4 = $("<td>" + v["ActDesc"] + "</td>");
+                        var td5 = $("<td><img title='编辑..'src='../images/33.gif' key=" + v["ActID"] + " CusID=" + v["CusID"] + " ActMemo=" + v["ActMemo"] + " />&nbsp;<img title='删除..' key=" + v["ActID"] + " src='../images/11.gif' /></td>");
+                        tr.append(td1)
+                            .append(td2)
+                            .append(td3)
+                            .append(td4)
+                            .append(td5);
+                        $("#tbs2 tbody").append(tr);
+                    });
+                });
+
+            });
+        });
+        //-----------分页查询全局变量-----------
+        var index = 1;
+        var maxpage;
+        var cusid="";
+        var cusname = "";
+        //---------------------------------
+        $(function () {
+            //添加新的联系人
+            $("#newa").click(function () {
+                var cusid = $(this).attr("key");
+                $.post("../Service/MyProcessRequst.ashx?&method=FGChanRoleAll&rightcode=R_0011", null, function (data) {
+                    if (data < 1) {
+                        alert("对不起，您当前没有拥有这个权限，如要继续进行，请联系系统管理员获取相应的权限！");
+                    } else {
+                       
+                        var rt = window.showModalDialog("LinkManEdit.aspx?data=" + Math.random(), { "cusid": cusid }, "dialogWidth:700px;dialogHeight:300px;help:no");
+                        if (rt != null) {
+                            if (rt["LMID"] > 0) {
+                                var tr = $("<tr></tr>");
+                                var td1 = $("<td>" + rt["LMName"] + "</td>");
+                                var td2 = $("<td>" + rt["LMSex"] + "</td>");
+                                var td3 = $("<td>" + rt["LMDuty"] + "</td>");
+                                var td4 = $("<td>" + rt["LMOfficeNo"] + "</td>");
+                                var td5 = $("<td>" + rt["LMMobileNo"] + "</td>");
+                                var td6 = $("<td><img title='编辑.' src='../images/33.gif' key='" + rt["LMID"] + "' desc='" + rt["LMMemo"] + "' />&nbsp;&nbsp;<img title='删除.' src='../images/11.gif'  key='" + rt["LMID"] + "'  /></td>");
+                                tr.append(td1)
+                                    .append(td2)
+                                    .append(td3)
+                                    .append(td4)
+                                    .append(td5)
+                                    .append(td6);
+                                $("#tbs1 tbody").append(tr);
+                            }
+                        }
+                    }
+                });
+            });
+            //添加新的交往记录
+            $("#newact").click(function () {
+                var cusid = $(this).attr("key");
+                $.post("../Service/MyProcessRequst.ashx?&method=FGChanRoleAll&rightcode=R_0010", null, function (data) {
+                    if (data < 1) {
+                        alert("对不起，您当前没有拥有这个权限，如要继续进行，请联系系统管理员获取相应的权限！");
+                    } else {
+                        var rt = window.showModalDialog("ActivitysEdit.aspx?data=" + Math.random(), { "CusID": cusid }, "参数", "dialogWidth:700px;dialogHeight:300px;help:no");
+                        if (rt != null) {
+                            var tr = $("<tr></tr>");
+                            var td1 = $("<td>" + ConvertToDTX(rt["ActDate"]) + "</td>");
+                            var td2 = $("<td>" + rt["ActAdd"] + "</td>");
+                            var td3 = $("<td>" + rt["ActTitle"] + "</td>");
+                            var td4 = $("<td>" + rt["ActDesc"] + "</td>");
+                            var td5 = $("<td><img title='编辑..'src='../images/33.gif' key=" + rt["ActID"] + " CusID=" + rt["CusID"] + " ActMemo=" + rt["ActMemo"] + " />&nbsp;<img title='删除..' key=" + rt["ActID"] + " src='../images/11.gif' /></td>");
+                            tr.append(td1)
+                                .append(td2)
+                                .append(td3)
+                                .append(td4)
+                                .append(td5);
+                            $("#tbs2 tbody").append(tr);
+                        }
+                    }
+                });
+            });
+            //修改客户信息
+            $("img[title=编辑]").live("click", function () {
+                var tr = $(this).parent().parent();
+                var cusid = $(this).attr("key");
+                $.post("../Service/MyProcessRequst.ashx?&method=FGChanRoleAll&rightcode=R_0009", null, function (data) {
+                    if (data < 1) {
+                        alert("对不起，您当前没有拥有这个权限，如要继续进行，请联系系统管理员获取相应的权限！");
+                    } else {
+                       
+                        var rt = window.showModalDialog("CustomerEdit.aspx?data=" + Math.random(), { "CusID": cusid }, "dialogWidth:850px;dialogHeight:400px;help:no");
+                        if (rt != null) {
+                            tr.children("th")[1].innerText = rt["CusName"];
+                        }
+                    }
+                });
+            });
+            Getdata();
+            //查询按钮点击事件
+            $("#rightPage input[method]").click(function () {
+                var method = $(this).attr("method");
+                if (method == "shou") {
+                    index = 1;
+                } else if (method == "shang") {
+                    index = index > 1 ? index - 1 : index;
+                } else if (method == "xia") {
+                    index = index < maxpage ? index + 1 : index;
+                } else if (method == "wei") {
+                    index = maxpage;
+                } else if (method == "go") {
+                    var number = $("#size").val();
+                    try {
+                        if (parseInt(number) <= parseInt(maxpage)) {
+                            index = parseInt(number);
+                        }
+                    } catch (e) {
+                        alert("输入有误！");
+                    }
+                }
+                Getdata();
+            });
+            //输入查询
+            $("input[value=查询]").click(function () {
+                index = 1;
+                cusid = $("#cusid").val();
+                cusname = $("#cusname").val();
+                Getdata();
+            });
+            $("#cusid").keyup(function () {
+                index = 1;
+                cusid = $("#cusid").val();
+                cusname = $("#cusname").val();
+                Getdata();
+            });
+            $("#cusname").keyup(function () {
+                index = 1;
+                cusid = $("#cusid").val();
+                cusname = $("#cusname").val();
+                Getdata();
+            });
+        });
+        //查询方法
+        function Getdata() {
+            var jsstr=JSON.stringify({"CusState":index,"CusID":cusid,"CusName":cusname});
+            myAjax("/Service/CusServices.asmx/GetPageData", JSON.stringify({ "json": jsstr }), function (data) {
+                maxpage = JSON.parse(data["d"])["page"];
+                count = JSON.parse(data["d"])["count"];
+                $("#leftPage").text("共有" + count + "条记录，当前第" + index + "/" + maxpage + "页");
+                $("#tbs tbody tr").remove();    
+                $(JSON.parse(data["d"])["list"]).each(function (k, v) {
+                    var tr = $("<tr></tr>");
+                    var td1 = $("<th>" + v["CusID"] + "</th>");
+                    var td2 = $("<th>" + v["CusName"] + "</th>");
+                    var td3 = $("<th>" + ConvertTime(v["CusDate"]) + "</th>");
+                    var td4 = $("<th>" + v["UserName"] + "</th>");
+                    var td5 = $("<th><img src='../images/33.gif' title='编辑'  key='"+v["CusID"]+"' /></th>");
+                    $(tr).append(td1)
+                        .append(td2)
+                        .append(td3)
+                        .append(td4)
+                        .append(td5);
+                    $("#tbs tbody").append(tr);
+                });
+            });
+        }
+    </script>
+</head>
+<body>
+    <div id="desDiv">
+        <span>客户信息管理</span><br />
+        维护客户信息，记录客户联系电话和交往记录
+    </div>
+    <table class="tableEdit" >
+        <tr>
+            <th>
+                客户名称：
+            </th>
+            <td>
+                <input type="text" id="cusname"/>
+            </td>
+            <th>
+                客户编号：
+            </th>
+            <td>
+                <input type="text" id="cusid"/>
+            </td>
+        </tr>
+        <tfoot>
+            <tr>
+                <td colspan="8">
+                    <input type="button" value="查询" />
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    <br />
+    <div style="width: 1065px">
+        <div id="dataLeft">
+            <table class="dataTable" id="tbs">
+                <thead>
+                    <tr>
+                        <th>
+                            客户编号
+                        </th>
+                        <th>
+                            客户名称
+                        </th>
+                        <th>
+                            建立时间
+                        </th>
+                        <th>
+                            客户经理
+                        </th>
+                        <th>
+                            操作
+                        </th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+
+            </table>
+            <div id="pageDiv">
+                <div id="leftPage">
+                  </div>
+                <div id="rightPage">
+                    <input type="image" src="../images/first.gif" method="shou" />&nbsp;&nbsp;
+                    <input type="image" src="../images/back.gif" method="shang" />&nbsp;&nbsp;
+                    <input type="image" src="../images/next.gif" method="xia" />&nbsp;&nbsp;
+                    <input type="image" src="../images/last.gif" method="wei"/>&nbsp;&nbsp; 转到第<input type="text"
+                        size="1"  id="size"/>&nbsp;&nbsp;<input type="image"  method="go"src="../images/go.gif" />
+                </div>
+            </div>
+        </div>
+        <div id="dataRight">
+            <div class="menuDiv">
+                <div>联系人
+                </div>
+                <div>交往信息
+                </div>
+            </div>
+            <div class="contentDiv">
+                <div>
+                    <a href="#" id="newa">新建联系人</a>
+                    <table class="dataTable" id="tbs1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    姓名
+                                </th>
+                                <th>
+                                    性别
+                                </th>
+                                <th>
+                                    职位
+                                </th>
+                                <th>
+                                    固定电话
+                                </th>
+                                <th>
+                                    手机号码
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div><a href="#" id="newact">新建交往记录</a>
+                    <table class="dataTable" id="tbs2">
+                        <thead>
+                            <tr>
+                                <th>
+                                    时间
+                                </th>
+                                <th>
+                                    地点
+                                </th>
+                                <th>
+                                    概要
+                                </th>
+                                <th>
+                                    描述
+                                </th>
+                                <th>
+                                    操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
